@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		 <meta http-equiv="Content-Script-Type" content="text/javascript">
+		 <title>strona rogala 3g2</title>
+
+		 <script type="text/javascript">
+
+		 	function system(){
+		 	var agent = navigator.userAgent.toLowerCase();
+			 var nazwa = "nieznany";
+			 if(agent.indexOf('windows') != -1) 
+			 	{
+			 		nazwa = "Windows";
+			 	}
+
+			 if(agent.indexOf('linux') != -1) 
+			 	{
+			 		nazwa = "Linux";
+			 	}
+			 else if(agent.indexOf('mac') != -1) 
+			 	{
+			 		nazwa = "MacOS";
+	 			}
+	 			return nazwa;
+		 	}	
+
+		 	function wyswietlDate(){
+			 var Today = new Date();
+			 var Month = (Today.getMonth()+1);
+			 var Day = Today.getDate();
+			 var Year = Today.getFullYear();
+			 if(Year <= 99) Year += 1900
+			 return Day + "-" + Month + "-" + Year;
+			}
+			function przegladarka(){
+				var nazwaP = navigator.appName;
+				return nazwaP;
+			}
+			function przegladarkaWER(){
+				var ver = navigator.appVersion;
+				return ver;
+			}
+			function wdp(){
+				var daneP = navigator.userAgent;
+				return daneP;
+			}
+			function getOS() {
+			  var userAgent = window.navigator.userAgent,
+			      platform = window.navigator.platform,
+			      macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+			      windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+			      iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+			      os = null;
+
+			  if (macosPlatforms.indexOf(platform) !== -1) {
+			    os = 'Mac OS';
+			  } else if (iosPlatforms.indexOf(platform) !== -1) {
+			    os = 'iOS';
+			  } else if (windowsPlatforms.indexOf(platform) !== -1) {
+			    os = 'Windows';
+			  } else if (/Android/.test(userAgent)) {
+			    os = 'Android';
+			  } else if (!os && /Linux/.test(platform)) {
+			    os = 'Linux';
+			  }
+
+			  return os;
+			}
+			function online(){
+				var onlineD = navigator.onLine;
+				return onlineD;
+			}
+			function ojava(){
+				var java = navigator.javaEnabled();
+				return java;
+			}
+		 </script>
+	 </head>
+		<body>
+		 <script type="text/javascript">
+
+		 	document.write("Igor Rogala ");
+		 	document.write("Dzisiaj jest " + wyswietlDate());
+		 	document.write("<br>");
+		 	document.write("Przeglądarka = " + przegladarka());
+		 	document.write("<br>");
+		 	document.write("Wersja przeglądarki = " + przegladarkaWER());
+		 	document.write("<br>");
+		 	document.write("Wszystkie dane Przeglądarki = " + wdp());
+		 	document.write("<br>");
+		 	document.write("Twój system to: " + getOS()); 
+		 	document.write("<br>");
+		 	document.write("Przeglądarka pracuje w trybie online = " + online());
+		 	document.write("<br>");
+		 	document.write("Obsługa Java = " + ojava());
+		 </script>
+
+		 <br>
+		
+	</body>
+</html>

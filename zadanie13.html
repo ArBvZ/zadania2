@@ -1,0 +1,28 @@
+<html>
+	<body>
+		<div style="color:red;font-size:50px;">
+			<script language="JavaScript">
+			
+				var liczba1=prompt("podaj liczbe A=","");
+				var liczba2=prompt("podaj liczbe B=","");
+				
+				var a_r=parseFloat(liczba1);
+				var b_r=parseFloat(liczba2);
+				
+				document.write("wczytane liczby: A="+a_r+" B="+b_r+"<br>");
+				document.write("("+a_r+" + "+b_r+")^3=");
+				document.write(a_r+ "^3" + "+3*");
+				document.write(a_r+"^2"+"*"+b_r);
+				document.write("+3"+"*"+a_r);
+				
+				var w1= a_r * a_r * a_r;
+                var w2= 3 * (a_r * a_r) * b_r;
+                var w3= 3 * a_r * (b_r * b_r);
+                var w4= b_r * b_r * b_r;
+                var suma=w1+w2+w3+w4;
+
+				document.write("<br>"+suma);
+			</script>
+		</div>
+	</body>
+</html>
